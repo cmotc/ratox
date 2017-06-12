@@ -74,7 +74,7 @@ checkinstall-deb:
 		--pkglicense=LICENSE \
 		--pakdir=.. \
 		--requires=
-		--nodoc \
+		--nodoc=yes \
 		--deldoc=yes \
 		--deldesc=yes \
 		--backup=no \
