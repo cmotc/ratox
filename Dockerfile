@@ -1,6 +1,6 @@
-FROM debian:stretch
-RUN apt-get update && apt-get install -yq apt-transport-https gpgv-static gnupg2 bash
-RUN echo deb https://pkg.tox.chat/debian stable stretch | tee /etc/apt/sources.list.d/tox.list
+FROM debian:sid
+RUN apt-get update && apt-get install -yq apt-transport-https gpgv-static gnupg2 bash apt-utils
+RUN echo deb https://pkg.tox.chat/debian stable sid | tee /etc/apt/sources.list.d/tox.list
 RUN wget -qO - https://pkg.tox.chat/debian/pkg.gpg.key | apt-key add - && apt-get update
 RUN apt-get install -yq libtox-toktok-dev \
         libtoxav-toktok \
@@ -17,7 +17,8 @@ RUN apt-get install -yq libtox-toktok-dev \
         libtoxencryptsave-toktok-dev \
         build-essential \
         checkinstall \
-        gcc musl musl-dev musl-tools make git
+        gcc libc-dev musl musl-dev musl-tools make git gcc-multilib
+RUN apt-get dist-upgrade -yq
 RUN useradd -ms /bin/bash ratox
 USER ratox
 WORKDIR /home/ratox
