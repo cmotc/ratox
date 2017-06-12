@@ -73,7 +73,6 @@ checkinstall-deb:
 		--pkgversion=3 \
 		--pkglicense=LICENSE \
 		--pakdir=.. \
-		--requires=
 		--nodoc=yes \
 		--deldoc=yes \
 		--deldesc=yes \

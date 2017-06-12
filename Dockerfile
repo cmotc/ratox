@@ -22,4 +22,5 @@ RUN apt-get dist-upgrade -yq
 RUN useradd -ms /bin/bash ratox
 USER ratox
 WORKDIR /home/ratox
-RUN git clone https://github.com/cmotc/ratox && cd ratox && make checkinstall-deb
+RUN git clone https://github.com/cmotc/ratox
+RUN cd ratox && make checkinstall-deb
