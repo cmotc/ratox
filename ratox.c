@@ -17,9 +17,9 @@
 #include <time.h>
 #include <unistd.h>
 
-#include <tox/tox.h>
-#include <tox/toxav.h>
-#include <tox/toxencryptsave.h>
+#include </usr/include/tox/tox.h>
+#include </usr/include/tox/toxav.h>
+#include </usr/include/tox/toxencryptsave.h>
 
 #include "arg.h"
 #include "queue.h"

@@ -9,5 +9,5 @@ CC = musl-gcc
 LD = $(CC)
 CPPFLAGS = -DVERSION=\"${VERSION}\"
 CFLAGS   = -g -I/usr/local/include -Wall -Wunused $(CPPFLAGS)
-LDFLAGS  = -g -L/usr/local/lib -static
+LDFLAGS  = -g -L/usr/local/lib
 LDLIBS   = -ltoxcore -ltoxav -ltoxencryptsave -lsodium -lopus -lvpx -lm -lpthread
