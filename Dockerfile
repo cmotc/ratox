@@ -24,3 +24,8 @@ USER ratox
 WORKDIR /home/ratox
 RUN git clone https://github.com/cmotc/ratox
 RUN cd ratox && make checkinstall-deb
+RUN ls -laR
+USER root
+RUN dpkg -i *.deb
+USER ratox
+WORKDIR /home/ratox
