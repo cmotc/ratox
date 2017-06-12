@@ -21,4 +21,4 @@ RUN apt-get install -yq libtox-toktok-dev \
 RUN useradd -ms /bin/bash ratox
 USER ratox
 WORKDIR /home/ratox
-RUN git clone https://github.com/pranomostro/ratox && cd ratox && make
+RUN git clone https://github.com/cmotc/ratox && cd ratox && make checkinstall-deb

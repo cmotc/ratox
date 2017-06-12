@@ -5,7 +5,7 @@ VERSION = 0.3
 PREFIX = /usr/local
 MANPREFIX = $(PREFIX)/share/man
 
-CC = cc
+CC = musl-gcc
 LD = $(CC)
 CPPFLAGS = -DVERSION=\"${VERSION}\"
 CFLAGS   = -g -I/usr/local/include -Wall -Wunused $(CPPFLAGS)
