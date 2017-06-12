@@ -66,4 +66,18 @@ clean:
 	@echo cleaning
 	@rm -f $(BIN) $(OBJ) $(LIB) util.a
 
+checkinstall-deb:
+	checkinstall --install=no \
+		--default \
+		--pkgname=ratox \
+		--pkgversion=3 \
+		--pkglicense=LICENSE \
+		--pakdir=.. \
+		--requires=
+		--nodoc \
+		--deldoc=yes \
+		--deldesc=yes \
+		--backup=no \
+		--addso
+
 .PHONY: all binlib bin install uninstall clean
