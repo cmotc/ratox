@@ -9,5 +9,5 @@ CC = cc
 LD = $(CC)
 CPPFLAGS = -DVERSION=\"${VERSION}\"
 CFLAGS   = -g -I/usr/local/include -Wall -Wunused $(CPPFLAGS)
-LDFLAGS  = -g -L/usr/local/lib
+LDFLAGS  = -g -L/usr/local/lib -static
 LDLIBS   = -ltoxcore -ltoxav -ltoxencryptsave -lsodium -lopus -lvpx -lm -lpthread
