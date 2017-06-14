@@ -80,3 +80,6 @@ checkinstall-deb:
 		--addso
 
 .PHONY: all binlib bin install uninstall clean
+
+docker:
+	docker build -t ratox-docker .

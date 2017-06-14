@@ -10,4 +10,4 @@ LD = $(CC)
 CPPFLAGS = -DVERSION=\"${VERSION}\"
 CFLAGS   = -g -I/usr/include -Wall -Wunused $(CPPFLAGS)
 LDFLAGS  = -g -L/usr/local/lib -Bstatic
-LDLIBS   = -ltoxcore -ltoxav -ltoxencryptsave -lsodium -lopus -lvpx -lm -lpthread
+LDLIBS   = -l:libtoxcore.a -ltoxav -ltoxencryptsave -l:libsodium.a -l:libopus.a -l:libvpx.a -lm -lpthread

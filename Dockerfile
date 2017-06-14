@@ -17,14 +17,25 @@ RUN apt-get install -yq libtox-toktok-dev \
         libtoxencryptsave-toktok-dev \
         build-essential \
         checkinstall \
-        gcc libc-dev musl musl-dev musl-tools make git gcc-multilib
+        gcc libc-dev make git
 RUN apt-get dist-upgrade -yq
 RUN useradd -ms /bin/bash ratox
+ADD . /home/ratox/ratox
+RUN chown -R ratox:ratox /home/ratox/ratox
 USER ratox
 WORKDIR /home/ratox
-RUN git clone https://github.com/cmotc/ratox
-RUN cd ratox && make checkinstall-deb
-RUN ls -laR
+RUN cd ratox && checkinstall --install=no \
+		--default \
+		--pkgname=ratox \
+		--pkgversion=3 \
+		--pkglicense=LICENSE \
+		--pakdir=.. \
+		--nodoc \
+		--deldoc=yes \
+		--deldesc=yes \
+		--backup=no \
+		--addso
+RUN ls -la ~ ratox
 USER root
 RUN dpkg -i *.deb
 USER ratox
